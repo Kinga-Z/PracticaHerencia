@@ -4,24 +4,24 @@ using System.Text;
 
 namespace PracticaHerencia
 {
-    class EmpleadoHoras:Empleado
+    class Hora:Empleado
     {
-        public int preciohora = 10;
-
-        public int numerohoras { get; set; }
-
-        public int Horatrabajada()
+        public int ValorHora { get; set; }
+        public int HoraTrabajo { get; set; }
+        public Hora(string apellidos, string nombres, int edad, string departamento, int ValorHora, int HoraTrabajo) : base(apellidos, nombres, edad, departamento)
         {
-            return this.preciohora;
+            this.ValorHora = ValorHora;
+            this.HoraTrabajo = HoraTrabajo;
         }
-
-        public int SueldoCalculado()
+        public void MostrarHora()
         {
-            int total;
-
-            total = numerohoras * preciohora;
-            return total;
-
+            Console.WriteLine("-----------------\n      Hora\n-----------------");
+            Console.WriteLine("Nombre: " + nombres + "\nApellido: " + apellidos + "\nEdad " + edad + "\nDepartamento: " + departamento);
+            Console.WriteLine("-----------------\n-----------------");
+            Console.WriteLine("Valor de Hora: "+ValorHora);
+            Console.WriteLine("Valor de la Hora Trabajada "+ValorHora);
+            Console.WriteLine("Horas Trabajadas "+HoraTrabajo);
+            Console.WriteLine("Sueldo Total "+HoraTrabajo*ValorHora);
         }
     }
 }

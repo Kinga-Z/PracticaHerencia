@@ -4,16 +4,25 @@ using System.Text;
 
 namespace PracticaHerencia
 {
-    class EmpleadoTemporal:Empleado
+    class Temporal : Empleado
     {
-        public string ingreso { get; set; }
-        public string salida { get; set; }
-
-        public int sueldo = 500;
-
-        public int Sueldototal()
+        private int Sueldo = 700;
+        public int FechaSalida { get; set; }
+        public int FechaIngreso { get; set; }
+        public Temporal(string apellidos, string nombres, int edad, string departamento, int Sueldo, int FechaSalida, int FechaIngreso):base(apellidos,nombres,edad,departamento)
         {
-            return this.sueldo;
+            this.FechaIngreso = FechaIngreso;
+            this.FechaSalida = FechaSalida;
         }
+        public void MostrarTemporal()
+        {
+            Console.WriteLine("-----------------\n    Temporal\n-----------------");
+            Console.WriteLine("Nombre: "+nombres+"\nApellido: "+apellidos+"\nEdad: "+edad+"\nDepartamento: "+departamento+"");
+            Console.WriteLine("-----------------\n-----------------");
+            Console.WriteLine("El sueldo es de "+Sueldo+"$ mensuales");
+            Console.WriteLine("El año de Ingreso es "+FechaIngreso);
+            Console.WriteLine("El año de Salida es "+FechaSalida);
+        }
+
     }
 }
